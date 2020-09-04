@@ -88,7 +88,7 @@ const Home = (props) => {
                 variant="h5" 
                 gutterBottom
               >
-                Musicorum, enjoy the simplicity, enjoy your music.
+                Concentio, enjoy the simplicity, enjoy your music.
               </Typography>
               
               <Typography 
@@ -102,7 +102,7 @@ const Home = (props) => {
           <CardMedia
             className={classes.cardMedia}
             image="https://res.cloudinary.com/lang-code/image/upload/v1599217214/images/music_icon_tkqdsq.png"
-            title="Musicorum"
+            title="Concentio"
           />
         </Card>
       </Grid>
@@ -136,7 +136,7 @@ const Home = (props) => {
           title="Source code" 
           aria-label="Source code" 
           color="inherit"
-          href="https://github.com/MurphyAdam/Musicorum"
+          href="https://github.com/MurphyAdam/Concentio"
           target="_blank"
           rel="noopener noreferrer"
           >

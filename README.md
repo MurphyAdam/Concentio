@@ -1,8 +1,8 @@
-# Musicorum
+# Concentio
 
 Minimalistic music streaming app built with React + Material-UI, and served with Flask. Star, fork or contribute if you wish so. 
 
-### [live Demo](https://musicorum.herokuapp.com/ "Musicorum")
+### [live Demo](https://concentio.herokuapp.com/ "Concentio")
 
 #### What you need to run this code locally (build folder)
 1. Python 3 installed
@@ -36,4 +36,4 @@ at Heroku and push this repository to it. Learn more on doing so on [Flask PWA C
 
 ### GitHub repository
 
-[https://github.com/MurphyAdam/Musicorum"](https://github.com/MurphyAdam/Musicorum")
+[https://github.com/MurphyAdam/Concentio"](https://github.com/MurphyAdam/Concentio")
