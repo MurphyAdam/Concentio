@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import MusicPlayer from '../components/MusicPlayer';
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -25,12 +25,58 @@ export const useStyles = makeStyles((theme) => ({
   },
   description: {
   	margin: theme.spacing(0, 2)
+  },
+  a: {
+    textDecoration: 'none',
+    color: theme.palette.secondary.main
   }
 }));
+
+const defaultPlaylist = [
+  {
+    name: 'Gotta Get Up',
+    singer: 'Harry Nilsson',
+    cover:
+      'https://res.cloudinary.com/lang-code/image/upload/v1599213505/gotta_get_up_ilmg8w.jpg',
+    musicSrc:
+      'https://res.cloudinary.com/lang-code/video/upload/v1599213151/Harry_Nilsson_-_Gotta_Get_Up__Official_Audio_t9jftf.mp3',
+  },
+  {
+    name: 'Burning Sky',
+    singer: 'Bad Company',
+    musicSrc:
+      'https://res.cloudinary.com/lang-code/video/upload/v1599214523/01_20Burnin_20Sky_epzvsn.mp3',
+  },
+  {
+    name: 'Prism of life',
+    singer: 'Prism of life',
+    cover:
+      'https://res.cloudinary.com/lang-code/image/upload/v1599214158/presim_jlzurz.jpg',
+    musicSrc:
+      'https://res.cloudinary.com/lang-code/video/upload/v1599214125/11_20Prism_20of_20Life_bzmbwu.mp3',
+  },
+];
 
 const Home = (props) => {
 	
 	const classes = useStyles();
+  const [playlist, setPlaylist] = useState([]);
+
+  // the below hook is only rendered once, thus '[]' dependecy array,
+  // see MusicPlayer component for description.
+  useEffect(() => {
+    fetch(`${window.location.origin}/api/playlist`)
+    .then(response => {
+        response.json().then(data => {
+        if(data.error) setPlaylist(defaultPlaylist);
+        else if (data.playlist) setPlaylist(data.playlist);
+        else setPlaylist(defaultPlaylist);
+      })
+    })
+    .catch(error => {
+      setPlaylist(defaultPlaylist);
+    });
+  }, [])
 
 	return (
 		<React.Fragment>
@@ -38,7 +84,6 @@ const Home = (props) => {
         <Card className={classes.card}>
           <div className={classes.cardDetails}>
             <CardContent>
-
               <Typography 
                 variant="h5" 
                 gutterBottom
@@ -68,7 +113,12 @@ const Home = (props) => {
           className={classes.description}
           paragraph>
           Minimalistic music streaming app built with React + Material-UI, and served with Flask. Star, 
-          fork or contribute if you wish so.
+          fork or contribute if you wish so. 
+          <a href="https://github.com/MurphyAdam" 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className={classes.a}> By: @GitHub/MurphyAdam (Majdi)
+          </a>
         </Typography>
         <IconButton 
         	component="a"
@@ -115,7 +165,7 @@ const Home = (props) => {
           <MailIcon />
         </IconButton>
       </Grid>
-			<MusicPlayer />
+			<MusicPlayer playlist={playlist}/>
 		</React.Fragment>
 	);
 }

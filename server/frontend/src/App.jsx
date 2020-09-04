@@ -1,7 +1,7 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import Home from './containers/Home';
 import { MuiThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import config from './config';

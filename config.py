@@ -23,8 +23,6 @@ class Config(object):
 	Logs variabbles
 	"""
 	LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
-	ENGINEIO_LOGGER = False
-	SOCKETIO_LOGGER = False
 
 class Development(Config):
 
@@ -35,10 +33,11 @@ class Development(Config):
 	TESTING = os.environ.get('TESTING') or False
 	DEBUG = os.environ.get('DEBUG') or True
 
+class Testing(Config):
 
 	"""
-	Logs variabbles
+	Environment variabbles
 	"""
-	LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
-	ENGINEIO_LOGGER = True
-	SOCKETIO_LOGGER = True
+	APP_ENV = os.environ.get('APP_ENV') or 'testing'
+	TESTING = os.environ.get('TESTING') or True
+	DEBUG = os.environ.get('DEBUG') or False
