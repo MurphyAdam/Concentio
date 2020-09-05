@@ -147,7 +147,7 @@ const Home = (props) => {
           title="LinkedIn" 
           aria-label="LinkedIn" 
           color="inherit"
-          href="https://www.linkedin.com/in/mahfoud-majidi-258461198"
+          href="https://www.linkedin.com/in/majdi-mahfoud-258461198/"
           target="_blank"
           rel="noopener noreferrer"
           >
