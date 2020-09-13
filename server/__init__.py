@@ -5,7 +5,7 @@ from config import Config, Development
 
 def create_app(config_class=Config):
     """Construct the core application."""
-    app = Flask(__name__, static_folder='frontend/build/static', 
+    app = Flask(__name__, static_folder='../client/build/static', 
         instance_relative_config=False)
     # Application Configuration
     app.config.from_object(config_class)

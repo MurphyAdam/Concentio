@@ -9,13 +9,21 @@ Minimalistic music streaming app built with React + Material-UI, and served with
 2. Install Dependecies in requirement.txt
 3. In the root of this directory: 
 
+#### Client /concentio
+```bash
+cd client
+yarn build (or npm run build)
+```
+
+#### Server /concentio
 ```bash
 export FLASK_ENV=development
 flask run
 ```
+
 if you are on Windows, use 'set' instead of export.
 
-#### What you need to run develop this code locally
+#### What you need to develop this code locally
 
 1. Node (v14.7.0)
 2. NPM (6.14.7) or Yarn (1.22.4)
@@ -36,4 +44,4 @@ at Heroku and push this repository to it. Learn more on doing so on [Flask PWA C
 
 ### GitHub repository
 
-[https://github.com/MurphyAdam/Concentio"](https://github.com/MurphyAdam/Concentio")
+[https://github.com/MurphyAdam/Concentio](https://github.com/MurphyAdam/Concentio")
