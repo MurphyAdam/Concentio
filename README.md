@@ -12,6 +12,7 @@ Minimalistic music streaming app built with React + Material-UI, and served with
 #### Client /concentio
 ```bash
 cd client
+yarn (or npm install)
 yarn build (or npm run build)
 ```
 
